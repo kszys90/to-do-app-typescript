@@ -1,9 +1,9 @@
 import React from 'react'
-import CourseGoal from './components/CourseGoal'
 import { Header } from './components/Header'
 import goalsImg from './assets/goals.jpg'
+import { CourseGoalList } from './components/CourseGoalList'
 
-type CourseGoal = {
+export type CourseGoal = {
   title: string
   description: string
   id: number
@@ -27,18 +27,7 @@ function App() {
         <h1>Typescript TO-DO APP</h1>
       </ Header>
       <button onClick={handleAddGoal}>Add goal</button>
-      <ul>
-        {goals.map((goal) =>
-        (
-          <li key={goal.id}>
-            <CourseGoal
-              title={goal.title}
-            >
-              <p>{goal.description}</p>
-            </CourseGoal>
-          </li>
-        ))}
-      </ul>
+      <CourseGoalList goalsList={goals} />
     </main >
   )
 }
