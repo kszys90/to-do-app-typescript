@@ -1,6 +1,4 @@
-/* eslint-disable react/jsx-indent */
-/* eslint-disable indent */
-/* eslint-disable react/react-in-jsx-scope */
+
 export default function CourseGoal() {
     return (
         <article>
