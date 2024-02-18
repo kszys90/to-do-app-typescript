@@ -21,13 +21,19 @@ function App() {
       return [...prevState, newGoal]
     })
   }
+  const handleDeleteGoal = (id: number) => {
+    setGoals(prevGoals => {
+      const filteredGoals = prevGoals.filter((goal: CourseGoal) => goal.id !== id)
+      return filteredGoals
+    })
+  }
   return (
     <main>
       <Header image={{ src: goalsImg, alt: 'a list of goals' }}>
         <h1>Typescript TO-DO APP</h1>
       </ Header>
       <button onClick={handleAddGoal}>Add goal</button>
-      <CourseGoalList goalsList={goals} />
+      <CourseGoalList goalsList={goals} handleDeleteGoal={handleDeleteGoal} />
     </main >
   )
 }
